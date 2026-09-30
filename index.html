@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Number AI Trainer</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.22.0"></script>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🔢 Number AI</h1>
+
+    <p class="subtitle">
+        Ajari AI mengenali angka tulisan tanganmu
+    </p>
+
+    <div class="card">
+
+        <h2>1. Buat Data Training</h2>
+
+        <p>
+            Tulis angka yang ditampilkan, lalu simpan sebagai contoh.
+        </p>
+
+        <div class="target">
+            Angka:
+            <span id="targetNumber">0</span>
+        </div>
+
+        <canvas
+            id="canvas"
+            width="280"
+            height="280">
+        </canvas>
+
+        <div class="buttons">
+
+            <button id="saveBtn">
+                💾 Simpan Contoh
+            </button>
+
+            <button id="clearBtn">
+                🧹 Hapus
+            </button>
+
+        </div>
+
+        <p id="dataStatus">
+            Data: 0 contoh
+        </p>
+
+    </div>
+
+
+    <div class="card">
+
+        <h2>2. Training AI</h2>
+
+        <p>
+            Setelah punya cukup contoh, latih AI.
+        </p>
+
+        <button
+            id="trainBtn"
+            class="train">
+            🧠 Training AI
+        </button>
+
+        <p id="trainStatus">
+            AI belum dilatih.
+        </p>
+
+    </div>
+
+
+    <div class="card">
+
+        <h2>3. Deteksi Angka</h2>
+
+        <p>
+            Setelah training selesai, tulis angka apa saja.
+        </p>
+
+        <canvas
+            id="testCanvas"
+            width="280"
+            height="280">
+        </canvas>
+
+        <button
+            id="detectBtn"
+            class="detect">
+            🔍 Deteksi Angka
+        </button>
+
+        <div class="result">
+
+            <div id="resultNumber">
+                ?
+            </div>
+
+            <p id="confidence">
+                Confidence: -
+            </p>
+
+            <p id="detectStatus">
+                Menunggu...
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
